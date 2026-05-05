@@ -1,0 +1,8 @@
+from itertools import product
+
+# Read list A and B from input, converting space-separated strings to integers
+A = list(map(int, input().split()))
+B = list(map(int, input().split()))
+
+# Compute the Cartesian product and unpack the result for space-separated output
+print(*product(A, B))
