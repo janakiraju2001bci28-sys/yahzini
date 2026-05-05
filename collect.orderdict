@@ -1,0 +1,22 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import OrderedDict
+
+# Read the number of items
+n = int(input())
+ordered_items = OrderedDict()
+
+for _ in range(n):
+    # Split input; everything except the last part is the item name
+    data = input().split()
+    item_name = " ".join(data[:-1])
+    item_price = int(data[-1])
+    
+    # Update net price in the ordered dictionary
+    if item_name in ordered_items:
+        ordered_items[item_name] += item_price
+    else:
+        ordered_items[item_name] = item_price
+
+# Print item_name and net_price in order of first occurrence
+for name, net_price in ordered_items.items():
+    print(name, net_price)
