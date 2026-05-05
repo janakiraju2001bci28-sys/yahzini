@@ -1,0 +1,24 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re
+
+# Read the number of test cases
+t = int(input().strip())
+
+for _ in range(t):
+    uid = input().strip()
+    
+    # Validation logic based on the 5 rules:
+    # 1. Exactly 10 characters: len(uid) == 10
+    # 2. Only alphanumeric: uid.isalnum()
+    # 3. No repeating characters: len(set(uid)) == 10
+    # 4. At least 2 uppercase: len(re.findall(r'[A-Z]', uid)) >= 2
+    # 5. At least 3 digits: len(re.findall(r'[0-9]', uid)) >= 3
+    
+    if (len(uid) == 10 and 
+        uid.isalnum() and 
+        len(set(uid)) == 10 and 
+        len(re.findall(r'[A-Z]', uid)) >= 2 and 
+        len(re.findall(r'[0-9]', uid)) >= 3):
+        print("Valid")
+    else:
+        print("Invalid")
