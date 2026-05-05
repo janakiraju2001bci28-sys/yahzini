@@ -1,0 +1,12 @@
+def merge_the_tools(string, k):
+    # Iterate through the string in chunks of size k
+    for i in range(0, len(string), k):
+        # Extract the substring of length k
+        substring = string[i:i + k]
+        
+        # Create an ordered collection of unique characters
+        # Using dict.fromkeys() is a fast way to preserve order and remove duplicates
+        unique_chars = "".join(dict.fromkeys(substring))
+        
+        # Print the resulting string for each chunk
+        print(unique_chars)
