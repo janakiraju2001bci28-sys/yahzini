@@ -1,0 +1,14 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import numpy
+
+# Read N and M
+n, m = map(int, input().split())
+
+# Read the matrix rows and convert to a NumPy array
+matrix = numpy.array([input().split() for _ in range(n)], int)
+
+# Print the Transpose
+print(numpy.transpose(matrix))
+
+# Print the Flattened array
+print(matrix.flatten())
