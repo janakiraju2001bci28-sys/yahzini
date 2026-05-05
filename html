@@ -1,0 +1,17 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from html.parser import HTMLParser
+
+class MyHTMLParser(HTMLParser):
+    def handle_starttag(self, tag, attrs):
+        print(tag)
+        for attr in attrs:
+            print("->", attr[0], ">", attr[1])
+
+# Read input
+n = int(input())
+html_code = "\n".join([input() for _ in range(n)])
+
+# Parse HTML
+parser = MyHTMLParser()
+parser.feed(html_code)
+parser.close()
