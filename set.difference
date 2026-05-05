@@ -1,0 +1,16 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Read the number of English newspaper subscribers
+n = int(input())
+# Read the roll numbers and store as a set
+english_set = set(map(int, input().split()))
+
+# Read the number of French newspaper subscribers
+m = int(input())
+# Read the roll numbers and store as a set
+french_set = set(map(int, input().split()))
+
+# Find students only in English set using .difference()
+only_english = english_set.difference(french_set)
+
+# Print the count of such students
+print(len(only_english))
