@@ -1,0 +1,17 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import combinations
+
+# Step 1: Read input values
+N = int(input())
+letters = input().split()
+K = int(input())
+
+# Step 2: Generate all possible combinations of size K
+all_combinations = list(combinations(letters, K))
+
+# Step 3: Count combinations that contain 'a'
+count_with_a = sum(1 for combo in all_combinations if 'a' in combo)
+
+# Step 4: Calculate and print the probability
+probability = count_with_a / len(all_combinations)
+print(f"{probability:.3f}")
