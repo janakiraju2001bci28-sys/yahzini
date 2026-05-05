@@ -1,0 +1,9 @@
+
+def solve(s):
+    # Split by single space to preserve multiple spaces
+    words = s.split(' ')
+    # Capitalize each word and join back with space
+    return ' '.join(word.capitalize() for word in words)
+def solve(s):
+    return ' '.join(word.capitalize() for word in s.split(' '))
+# Complete the solve function below.
