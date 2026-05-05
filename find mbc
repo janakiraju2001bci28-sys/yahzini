@@ -1,0 +1,13 @@
+import math
+
+ab = int(input())
+bc = int(input())
+
+# atan2 returns the angle in radians
+angle_rad = math.atan2(ab, bc)
+
+# Convert to degrees and round to the nearest integer
+angle_deg = round(math.degrees(angle_rad))
+
+# Use the degree symbol in output
+print(f"{angle_deg}\u00b0")
