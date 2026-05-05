@@ -1,0 +1,16 @@
+def wrapper(f):
+    def fun(l):
+        new = []
+        for i in l:
+            if len(i)==10:
+                new.append("+91 " + i[0:5] + " " + i[5:10] )
+            elif len(i)==11:
+                new.append("+91 " + i[1:6] + " " + i[6:11])
+            elif len(i)==12:
+                new.append("+91 " + i[2:7] + " " + i[7:12])
+            elif i[0:3]=="+91":
+                new.append("+91 " + i[3:8] + " " + i[8:])
+        f(new)
+            
+        # complete the function
+    return fun
