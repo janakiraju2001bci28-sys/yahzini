@@ -1,0 +1,16 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re
+
+# Read input string
+S = input().strip()
+
+# Use re.search to find the first occurrence of an alphanumeric 
+# character ([a-zA-Z0-9]) that is followed immediately by itself (\1).
+m = re.search(r'([a-zA-Z0-9])\1+', S)
+
+# If a match is found, print the captured group (the repeating character).
+# Otherwise, print -1.
+if m:
+    print(m.group(1))
+else:
+    print(-1)
