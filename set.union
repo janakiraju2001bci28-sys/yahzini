@@ -1,0 +1,12 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Read input for English subscribers
+n = int(input())
+english_set = set(map(int, input().split()))
+
+# Read input for French subscribers
+b = int(input())
+french_set = set(map(int, input().split()))
+
+# Calculate the union and print its length
+print(len(english_set.union(french_set)))
+# Alternatively: print(len(english_set | french_set))
