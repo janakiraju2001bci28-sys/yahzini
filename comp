@@ -1,0 +1,10 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import groupby
+
+# Read the input string S
+S = input()
+
+# Group consecutive characters and print the result
+# k is the character, g is the group of consecutive occurrences
+for k, g in groupby(S):
+    print((len(list(g)), int(k)), end=' ')
