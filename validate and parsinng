@@ -1,0 +1,23 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re
+import email.utils
+
+# Define the regex pattern based on the rules
+# ^[a-zA-Z] - starts with a letter
+# [\w\-\.]* - followed by letters, numbers, _, -, or .
+# @[a-zA-Z]+ - followed by @ and alphabetical domain
+# \.[a-zA-Z]{1,3}$ - ends with . and a 1-3 char alphabetical extension
+pattern = r'^[a-zA-Z][\w\-\.]*@[a-zA-Z]+\.[a-zA-Z]{1,3}$'
+
+n = int(input())
+
+for _ in range(n):
+    line = input()
+    # parseaddr returns a tuple: (name, email_address)
+    parsed_pair = email.utils.parseaddr(line)
+    email_address = parsed_pair[1]
+    
+    # Check if the parsed email matches our regex criteria
+    if re.match(pattern, email_address):
+        # formataddr ensures the output matches the required 'name <email>' format
+        print(email.utils.formataddr(parsed_pair))
