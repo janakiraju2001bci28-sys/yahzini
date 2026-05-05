@@ -1,0 +1,14 @@
+import re
+
+n = int(input())
+for _ in range(n):
+    line = input()
+    # The pattern looks for ' && ' or ' || ' using lookarounds to handle overlaps
+    pattern = r'(?<= )(&&|\|\|)(?= )'
+    
+    # Replace once
+    line = re.sub(pattern, lambda x: "and" if x.group() == "&&" else "or", line)
+    # Replace again to catch symbols that were skipped due to shared spaces
+    line = re.sub(pattern, lambda x: "and" if x.group() == "&&" else "or", line)
+    
+    print(line)
