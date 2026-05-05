@@ -1,0 +1,14 @@
+from collections import Counter
+
+# Read input
+k = int(input())
+room_numbers = list(map(int, input().split()))
+
+# Count occurrences of each room
+counts = Counter(room_numbers)
+
+# Find the room that appears exactly once
+for room, count in counts.items():
+    if count == 1:
+        print(room)
+        break
