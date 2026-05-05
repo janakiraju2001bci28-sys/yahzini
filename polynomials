@@ -1,0 +1,11 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import numpy
+
+# Read coefficients as a list of floats
+coefficients = list(map(float, input().split()))
+
+# Read the value of x
+x = float(input())
+
+# Evaluate the polynomial at point x and print the result
+print(numpy.polyval(coefficients, x))
