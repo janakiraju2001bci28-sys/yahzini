@@ -1,0 +1,6 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+N, X = map(int, input().split())
+marks_data = [map(float, input().split()) for _ in range(X)]
+
+for student_scores in zip(*marks_data):
+    print(sum(student_scores) / X)
