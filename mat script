@@ -1,0 +1,18 @@
+import re
+
+# Read dimensions
+n, m = map(int, input().split())
+
+# Read matrix rows
+matrix = [input() for _ in range(n)]
+
+# Read column-by-column and join into a single string
+decoded_message = "".join([matrix[row][col] for col in range(m) for row in range(n)])
+
+# Replace non-alphanumeric characters between alphanumeric characters with a space
+# \w matches alphanumeric characters; [^\w]+ matches one or more non-alphanumeric characters
+result = re.sub(r'(?<=\w)([^\w]+)(?=\w)', ' ', decoded_message)
+
+print(result)
+
+
