@@ -1,0 +1,13 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import combinations_with_replacement
+
+# Read input string S and integer k
+s, k = input().split()
+
+# Sort the string and convert k to an integer
+s_sorted = sorted(s)
+k = int(k)
+
+# Generate and print combinations of size k with replacement
+for comb in combinations_with_replacement(s_sorted, k):
+    print("".join(comb))
