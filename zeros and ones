@@ -1,0 +1,11 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import numpy
+
+# Read space-separated integers and convert to a tuple
+shape = tuple(map(int, input().split()))
+
+# Print the array of zeros with integer type
+print(numpy.zeros(shape, dtype=int))
+
+# Print the array of ones with integer type
+print(numpy.ones(shape, dtype=int))
