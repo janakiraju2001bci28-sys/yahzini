@@ -1,0 +1,15 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import combinations
+
+# Step 1: Read input
+S, k = input().split()
+
+# Step 2: Sort string and convert k
+S = sorted(S)
+k = int(k)
+
+# Step 3: Generate combinations for each size from 1 to k
+for i in range(1, k + 1):
+    for combo in combinations(S, i):
+        # Step 4: Join tuple into string and print
+        print(''.join(combo))
