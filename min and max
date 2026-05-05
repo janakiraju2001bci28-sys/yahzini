@@ -1,0 +1,14 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import numpy
+
+# Read N and M
+n, m = map(int, input().split())
+
+# Read the 2-D array
+storage = numpy.array([input().split() for _ in range(n)], int)
+
+# Compute min along axis 1
+min_axis_1 = numpy.min(storage, axis=1)
+
+# Print the max of the result
+print(numpy.max(min_axis_1))
