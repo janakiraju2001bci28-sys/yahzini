@@ -1,0 +1,14 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import numpy
+
+# Set legacy print options to match the required HackerRank output format
+# This adds a space in the sign position of floats as in NumPy 1.13
+numpy.set_printoptions(legacy='1.13')
+
+# Read input from STDIN and convert to a NumPy array of floats
+A = numpy.array(input().split(), float)
+
+# Print the floor, ceil, and rint of the array elements
+print(numpy.floor(A))
+print(numpy.ceil(A))
+print(numpy.rint(A))
