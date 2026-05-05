@@ -1,0 +1,25 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import deque
+
+for _ in range(int(input())):
+    n = int(input())
+    queue = deque(map(int, input().split()))
+    
+    last_cube = float('inf')
+    possible = "Yes"
+    
+    while queue:
+        # Pick the larger of the two ends
+        if queue[0] >= queue[-1]:
+            pick = queue.popleft()
+        else:
+            pick = queue.pop()
+            
+        # Check if it fits the stacking rule
+        if pick <= last_cube:
+            last_cube = pick
+        else:
+            possible = "No"
+            break
+            
+    print(possible)
