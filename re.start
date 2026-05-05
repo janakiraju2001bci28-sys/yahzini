@@ -1,0 +1,16 @@
+import re
+
+S = input()
+k = input()
+
+# Use lookahead assertion to find overlapping matches
+# (?=(pattern)) captures the pattern without consuming it
+pattern = re.compile(f'(?=({re.escape(k)}))')
+matches = list(pattern.finditer(S))
+
+if matches:
+    for m in matches:
+        # m.start(1) is the start index, m.end(1) - 1 is the inclusive end index
+        print((m.start(1), m.end(1) - 1))
+else:
+    print((-1, -1))
