@@ -1,0 +1,17 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re
+
+# Read the number of lines
+n = int(input())
+
+# Regex pattern for valid hex codes that are NOT selectors
+# It looks for '#' followed by 3 or 6 hex digits, ensuring it's not at line start
+pattern = r'(?<!^)#(?:[0-9a-fA-F]{3}){1,2}'
+
+for _ in range(n):
+    line = input()
+    # Find all matches in the current line
+    matches = re.findall(pattern, line)
+    if matches:
+        for match in matches:
+            print(match)
