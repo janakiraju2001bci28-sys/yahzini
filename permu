@@ -1,0 +1,9 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import permutations
+
+# Read input and split into string S and integer k
+s, k = input().split()
+
+# Generate permutations of the sorted string and join them
+for p in permutations(sorted(s), int(k)):
+    print("".join(p))
