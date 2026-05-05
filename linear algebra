@@ -1,0 +1,10 @@
+import numpy as np
+
+# Set the number of rows/columns
+N = int(input())
+
+# Read the matrix elements and convert them to float
+A = np.array([input().split() for _ in range(N)], float)
+
+# Calculate and print the determinant rounded to 2 decimal places
+print(round(np.linalg.det(A), 2))
