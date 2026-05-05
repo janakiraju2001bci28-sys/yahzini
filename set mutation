@@ -1,0 +1,21 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Read initial set A details
+_ = int(input())
+storage = set(map(int, input().split()))
+
+# Read number of operations
+n = int(input())
+
+for _ in range(n):
+    # Read operation name and length of new set
+    operation_info = input().split()
+    operation_name = operation_info[0]
+    
+    # Read the elements of the new set
+    new_set = set(map(int, input().split()))
+    
+    # Perform the specified mutation on the storage set
+    getattr(storage, operation_name)(new_set)
+
+# Print the sum of the remaining elements in set A
+print(sum(storage))
