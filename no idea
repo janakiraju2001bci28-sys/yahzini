@@ -1,0 +1,23 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Read input for n and m
+n, m = map(int, input().split())
+
+# Read the elements of the array
+array = list(map(int, input().split()))
+
+# Read sets A and B (crucial to use set() for O(1) lookup time)
+A = set(map(int, input().split()))
+B = set(map(int, input().split()))
+
+# Calculate initial happiness
+happiness = 0
+
+# Iterate through the array and update happiness
+for i in array:
+    if i in A:
+        happiness += 1
+    elif i in B:
+        happiness -= 1
+
+# Output the final happiness score
+print(happiness)
