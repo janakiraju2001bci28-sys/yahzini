@@ -1,0 +1,7 @@
+regex_pattern = r""	# Do not delete 'r'.
+import re
+
+# Complete the regex_pattern to split at every ',' (comma) and '.' (dot)
+regex_pattern = r"[,.]" # Do not delete 'r'.
+
+# The logic provided by 
