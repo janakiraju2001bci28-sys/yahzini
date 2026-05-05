@@ -1,0 +1,16 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Step 1: Read the size and elements for the first set
+m_size = int(input())
+m_set = set(map(int, input().split()))
+
+# Step 2: Read the size and elements for the second set
+n_size = int(input())
+n_set = set(map(int, input().split()))
+
+# Step 3: Find the symmetric difference
+# This gets elements in either m_set or n_set, but not both
+sym_diff = m_set.symmetric_difference(n_set)
+
+# Step 4: Sort the result and print each element on a new line
+for value in sorted(sym_diff):
+    print(value)
