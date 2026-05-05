@@ -1,0 +1,18 @@
+T = int(input())
+
+for _ in range(T):
+    try:
+        # Read a and b, then split them into separate variables
+        a, b = input().split()
+        
+        # Perform integer division and print result
+        # Note: input is read as strings, so they must be cast to int
+        print(int(a) // int(b))
+        
+    except ZeroDivisionError as e:
+        # Print custom error message for division by zero
+        print("Error Code:", e)
+        
+    except ValueError as e:
+        # Print custom error message for invalid input (e.g., non-integers)
+        print("Error Code:", e)
