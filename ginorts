@@ -1,0 +1,15 @@
+s = input()
+lower, upper, odd, even = [], [], [], []
+
+for char in s:
+    if char.islower():
+        lower.append(char)
+    elif char.isupper():
+        upper.append(char)
+    elif char.isdigit():
+        if int(char) % 2 != 0:
+            odd.append(char)
+        else:
+            even.append(char)
+
+print("".join(sorted(lower) + sorted(upper) + sorted(odd) + sorted(even)))
