@@ -1,0 +1,17 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import product
+
+# Read K and M
+k, m = map(int, input().split())
+
+# Read each list, squaring elements while discarding the first count integer
+lists = []
+for _ in range(k):
+    # input().split()[1:] skips the first integer (count N)
+    row = map(int, input().split()[1:])
+    # Store squared values to simplify final calculation
+    lists.append([x**2 for x in row])
+
+# Calculate max of (sum of combinations % M)
+results = (sum(combination) % m for combination in product(*lists))
+print(max(results))
