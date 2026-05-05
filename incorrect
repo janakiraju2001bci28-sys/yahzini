@@ -1,0 +1,21 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re
+
+# Read the number of test cases
+try:
+    t = int(raw_input())
+except EOFError:
+    t = 0
+
+for _ in range(t):
+    try:
+        s = raw_input()
+        # Attempt to compile the string as a regex
+        re.compile(s)
+        print("True")
+    except re.error:
+        # If compilation fails, it's an incorrect regex
+        print("False")
+    except Exception:
+        # Catching any other potential exceptions
+        print("False")
